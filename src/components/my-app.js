@@ -45,7 +45,7 @@ class MyApp extends LitElement {
     }
 
     async _fetchData() {
-        await fetch("https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2018-01-01&endtime=2018-10-15&minfelt=50&minmagnitude=5", {method: "GET"})
+        await fetch("https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2018-01-01&endtime=2018-10-15&minfelt=50&minmagnitude=3", {method: "GET"})
             .then((res) => res.json())
             .then((res) => {
                 console.log(res)
