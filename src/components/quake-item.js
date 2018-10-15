@@ -21,8 +21,19 @@ class QuakeItem extends LitElement {
                     min-height: 36px;
                     max-height: 36px;
                     border-radius: 200%;
-                    background: red;
-                    color: white;
+                    color: #fff;
+                }
+
+                .bg-red {
+                    background: #f44336;
+                }
+
+                .bg-orange {
+                    background: #ff5722;
+                }
+
+                .bg-green {
+                    background: #4caf50;
                 }
 
                 .desc {
@@ -60,7 +71,9 @@ class QuakeItem extends LitElement {
             </style>
             <div class="quake-item">
                 <div class="right">
-                    <span class="mags">${ this.mags }</span>
+                    <span class="mags ${ this.mags > 5 ? "bg-red" :
+                                         this.mags > 3.5 ? "bg-orange" : 
+                                         "bg-green"}"> ${ this.mags }</span>
                     <div class="desc">
                         <span class="direction">${ this._getDirection(this.place) }</span>
                         <span class="city">${ this._getCity(this.place) }</span>
@@ -109,7 +122,7 @@ class QuakeItem extends LitElement {
     _getCity(place) {
         // substring[regex, length-1]
         const regex = /(of)/
-        const word = place.substring(place.search(regex) + 3, place.length-1)
+        const word = place.substring(place.search(regex) + 3, place.length)
         return word
     }
 }
