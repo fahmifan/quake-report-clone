@@ -10,6 +10,8 @@ class NavBar extends LitElement {
                     color: #fff;
                     display: flex;
                     height: 36px;
+                    width: 100%;
+                    position: fixed;
                     padding: 0.5rem;
                     align-items: center;
                     padding-left: 0.75rem;
