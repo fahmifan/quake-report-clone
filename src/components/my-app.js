@@ -3,6 +3,9 @@ import { LitElement, html } from "@polymer/lit-element"
 import "./quake-item.js"
 import "./nav-bar.js"
 
+import { cssSpinner } from "./css-spinner"
+
+
 class MyApp extends LitElement {
     constructor() {
         super();
@@ -21,7 +24,27 @@ class MyApp extends LitElement {
     }
 
     render() {
-        if(this.quakes.length == 0) return html``            
+        if(this.quakes.length == 0) return html`
+            ${cssSpinner}            
+            <style>
+                main {
+                    padding-top: 4rem;
+                }
+                .nav-bar {
+                    width: 100%;
+                }
+                .spinner {
+                    display: flex;
+                    justify-content: center;
+                    margin: 0 auto;
+                    margin-top: 4rem;
+                }
+            </style>
+            <nav-bar class="nav-bar"></nav-bar>
+            <main>
+                <div class="spinner lds-ring"><div></div><div></div><div></div><div></div></div>
+            </main>
+        `            
 
         return html`
             <style>
@@ -31,9 +54,13 @@ class MyApp extends LitElement {
                     justify-content: center;
                     padding-left: 0.5rem;
                     padding-right: 0.5rem;
+                    padding-top: 3.5rem;
+                }
+                .nav-bar {
+                    width: 100%;
                 }
             </style>
-            <nav-bar></nav-bar>
+            <nav-bar class="nav-bar"></nav-bar>
             <main>
                 ${ this.quakes.map((quake) => {
                     return html`
