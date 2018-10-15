@@ -25,7 +25,7 @@ class MyApp extends LitElement {
 
     render() {
         if(this.quakes.length == 0) return html`
-            ${cssSpinner}            
+            ${cssSpinner}
             <style>
                 main {
                     padding-top: 4rem;
@@ -35,7 +35,6 @@ class MyApp extends LitElement {
                 }
                 .spinner {
                     display: flex;
-                    justify-content: center;
                     margin: 0 auto;
                     margin-top: 4rem;
                 }

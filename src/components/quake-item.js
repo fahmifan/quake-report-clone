@@ -108,7 +108,7 @@ class QuakeItem extends LitElement {
     }
 
     _getDate(unixTime) {
-        return moment.unix(unixTime/1000).format("MMM DD, YYYY")
+        return moment.unix(unixTime/1000).format("MM/DD/YYYY")
     }
 
     _getDirection(place) {
