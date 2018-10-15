@@ -14,6 +14,7 @@ class QuakeItem extends LitElement {
 
                 .mags {
                     display: flex;
+                    color: #fff;
                     justify-content: center;
                     align-items: center;
                     min-width: 36px;
@@ -21,7 +22,6 @@ class QuakeItem extends LitElement {
                     min-height: 36px;
                     max-height: 36px;
                     border-radius: 200%;
-                    color: #fff;
                 }
 
                 .bg-red {
