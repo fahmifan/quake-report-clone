@@ -115,7 +115,6 @@ class QuakeItem extends LitElement {
         // substring[0, regex]
         const regex = /(of)/
         const word = place.substring(0, place.search(regex) + 2)
-        console.log(word)
         return word
     } 
 
